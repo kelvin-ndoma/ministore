@@ -1,4 +1,6 @@
+// components/ProductList.js
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductList = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
@@ -25,6 +27,13 @@ const ProductList = ({ addToCart }) => {
             />
             <h2 className="text-md font-semibold mt-2">{product.title}</h2>
             <p className="text-gray-600">${product.price.toFixed(2)}</p>
+            <Link to={`/product-details/${product.id}`}>
+              <button
+                className="bg-blue-500 text-white mt-2 px-4 py-2 rounded-full hover:bg-blue-700"
+              >
+                Show Details
+              </button>
+            </Link>
             <button
               onClick={() => addToCart(product)}
               className="bg-blue-500 text-white mt-2 px-4 py-2 rounded-full hover:bg-blue-700"
