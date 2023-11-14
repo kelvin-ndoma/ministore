@@ -1,3 +1,4 @@
+// components/Navbar.js
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { BsFacebook, BsGithub } from 'react-icons/bs';
@@ -10,7 +11,7 @@ const Navbar = () => {
 
   return (
     // navbar styled
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-white text-black'>
+    <div className='fixed top-0 w-full h-[80px] flex justify-between items-center px-4 bg-white text-black'>
       <div>
         <img src={logo} alt="logo" style={{ width: '50px' }} />
       </div>
@@ -33,7 +34,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* humberger */}
+      {/* hamburger */}
       <div onClick={handleClick} className='md:hidden z-10'>
         {!nav ? <FaBars /> : <FaTimes />}
       </div>
@@ -47,8 +48,8 @@ const Navbar = () => {
         <li className='py-6 text-4xl'> <Link onClick={handleClick} to="/order-history">Order History</Link></li>
       </ul>
 
-      {/* social media icons */}
-      <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
+    
+      {/* <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
         <ul>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
             <a className='flex justify-between items-center w-full text-black' href='/'>Linkedin <FaLinkedin size={30} /></a>
@@ -63,7 +64,7 @@ const Navbar = () => {
             <a className='flex justify-between items-center w-full text-black' href='/'>Github <BsGithub size={30} /></a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }
